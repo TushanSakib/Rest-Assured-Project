@@ -27,6 +27,6 @@ public class UserClient {
                 .contentType(ContentType.JSON)
                 .body(request)
                 .when()
-                .post(Routes.CREATE_USER)
+                .post(Routes.CREATE_USER);
     }
 }
