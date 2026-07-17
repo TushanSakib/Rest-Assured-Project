@@ -38,12 +38,17 @@ public class UserClient extends BaseClient {
             int id,
             UpdateUserRequest request
     ){
-        return given()
-                .spec(getRequestSpec())
-                .pathParam("id",id)
-                .contentType(ContentType.JSON)
-                .body((new ObjectMapper()).writeValueAsString(request))
-                .when()
-                .put(Routes.UPDATE_USER);
+        try{
+            String json = (new ObjectMapper()).writeValueAsString(request);
+            return given()
+                    .spec(getRequestSpec())
+                    .pathParam("id",id)
+                    .contentType(ContentType.JSON)
+                    .body(json)
+                    .when()
+                    .put(Routes.UPDATE_USER);
+        } catch (Exception e){
+            throw new RuntimeException(e);
+        }
     }
 }
