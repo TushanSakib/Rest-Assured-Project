@@ -1,9 +1,6 @@
 clients\UserClient.class
 services\UserService.class
-tests\UpdateUserTest.class
-tests\UserAPITest.class
 models\request\CreateUserRequest.class
-tests\CreateUserTest.class
 utils\ConfigReader.class
 utils\TestDataFactory.class
 base\BaseTest.class
