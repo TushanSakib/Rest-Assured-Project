@@ -3,7 +3,8 @@ package clients;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import utils.ConfigReader;
-npublic class BaseClient {
+
+public class BaseClient {
     protected RequestSpecification getRequestSpec(){
         RequestSpecBuilder builder = new RequestSpecBuilder()
                 .setContentType("application/json");
@@ -14,4 +15,3 @@ import utils.ConfigReader;
         return builder.build();
     }
 }
-
