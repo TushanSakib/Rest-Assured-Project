@@ -4,6 +4,7 @@ import endpoints.Routes;
 import io.restassured.http.ContentType;
 import io.restassured.mapper.ObjectMapperType;
 import io.restassured.response.Response;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import models.request.CreateUserRequest;
 import models.request.UpdateUserRequest;
 
@@ -41,7 +42,7 @@ public class UserClient extends BaseClient {
                 .spec(getRequestSpec())
                 .pathParam("id",id)
                 .contentType(ContentType.JSON)
-                .body(request, ObjectMapperType.JACKSON_2)
+                .body((new ObjectMapper()).writeValueAsString(request))
                 .when()
                 .put(Routes.UPDATE_USER);
     }
