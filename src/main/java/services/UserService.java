@@ -1,6 +1,7 @@
 package services;
 
 import clients.UserClient;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import io.restassured.response.Response;
 import models.request.CreateUserRequest;
 import models.request.UpdateUserRequest;
@@ -33,11 +34,17 @@ public class UserService {
     public UpdateUserResponse updateUser(
             int id,
             UpdateUserRequest request
-    ){
+    ) throws JsonProcessingException {
         Response response =
                 userClient.updateUser(
                         id,request
                 );
-        return response.as(UpdateUserResponse.class);
+        LoggerUtils.info("Response Status: " + response.getStatusCode());
+        LoggerUtils.info("Response Body: " + response.getBody().asString());
+        if(response.getStatusCode() >=200 && response.getStatusCode()<300){
+            return response.as(UpdateUserResponse.class);
+        } else {
+            throw new RuntimeException("Update failed: " + response.getStatusCode() + " body: " + response.getBody().asString());
+        }
     }
 }
