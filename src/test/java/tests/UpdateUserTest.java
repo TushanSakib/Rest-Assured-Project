@@ -1,6 +1,7 @@
 package tests;
 
 import base.BaseTest;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import models.request.UpdateUserRequest;
 import models.response.UpdateUserResponse;
 import org.testng.annotations.Test;
@@ -12,7 +13,7 @@ public class UpdateUserTest extends BaseTest {
     UserService userService = new UserService();
 
     @Test
-    public void verifyUserUpdate(){
+    public void verifyUserUpdate() throws JsonProcessingException {
         UpdateUserRequest request = new UpdateUserRequest();
 
         request.setName("Sakib");

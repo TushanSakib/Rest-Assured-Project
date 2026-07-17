@@ -14,7 +14,7 @@ public class UserAPITest extends BaseTest {
         Response response = userService.getUsers();
 
         Assert.assertEquals(
-                response.getStatusCode(),200
+                200, response.getStatusCode()
         );
 
     }
