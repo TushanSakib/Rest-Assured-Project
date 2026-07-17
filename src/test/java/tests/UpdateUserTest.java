@@ -3,7 +3,7 @@ package tests;
 import base.BaseTest;
 import models.request.UpdateUserRequest;
 import models.response.UpdateUserResponse;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import org.testng.Assert;
 import services.UserService;
 
