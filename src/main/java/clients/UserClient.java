@@ -2,6 +2,7 @@ package clients;
 
 import endpoints.Routes;
 import io.restassured.http.ContentType;
+import io.restassured.mapper.ObjectMapperType;
 import io.restassured.response.Response;
 import models.request.CreateUserRequest;
 import models.request.UpdateUserRequest;
@@ -39,7 +40,8 @@ public class UserClient extends BaseClient {
         return given()
                 .spec(getRequestSpec())
                 .pathParam("id",id)
-                .body(request)
+                .contentType(ContentType.JSON)
+                .body(request, ObjectMapperType.JACKSON_2)
                 .when()
                 .put(Routes.UPDATE_USER);
     }
