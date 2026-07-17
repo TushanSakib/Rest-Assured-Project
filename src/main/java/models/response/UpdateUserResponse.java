@@ -1,16 +1,20 @@
 package models.response;
 
-public class UpdateUserResponse {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-    private String name;
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class UpdateUserResponse {
+n    private String name;
     private String job;
-    private String updateAt;
+
+    @JsonProperty("updatedAt")
+    private String updatedAt;
 
     public String getName(){
         return name;
     }
-
-    public void setName(String name){
+n    public void setName(String name){
         this.name = name;
     }
     public String getJob(){
@@ -20,10 +24,9 @@ public class UpdateUserResponse {
         this.job = job;
     }
     public String getUpdatedAt(){
-        return updateAt;
+        return updatedAt;
     }
-    public void setUpdateAt(String updatedAt){
-        this.updateAt = updatedAt;
-
+    public void setUpdatedAt(String updatedAt){
+        this.updatedAt = updatedAt;
     }
 }
