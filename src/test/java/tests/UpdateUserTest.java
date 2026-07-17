@@ -4,8 +4,8 @@ import base.BaseTest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import models.request.UpdateUserRequest;
 import models.response.UpdateUserResponse;
-import org.testng.annotations.Test;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 import services.UserService;
 
 public class UpdateUserTest extends BaseTest {

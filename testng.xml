@@ -12,6 +12,7 @@
 
             <class name="tests.UserAPITest"/>
             <class name="tests.UpdateUserTest"/>
+            <class name="tests.CreateUserTest"/>
 
         </classes>
 

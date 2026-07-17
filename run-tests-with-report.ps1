@@ -14,10 +14,10 @@ Write-Host "`nGenerating Allure Report..." -ForegroundColor Yellow
 mvn allure:report
 
 # Open the report in default browser
-$reportPath = "target\site\allure-report\index.html"
+$reportPath = "target\site\allure-maven-plugin\index.html"
 if (Test-Path $reportPath) {
     Write-Host "Opening Allure Report in Browser..." -ForegroundColor Green
-    Start-Process $reportPath
+    mvn allure:serve
 } else {
     Write-Host "Report not found at $reportPath" -ForegroundColor Red
 }
