@@ -1,0 +1,15 @@
+clients\UserClient.class
+services\UserService.class
+tests\UpdateUserTest.class
+tests\UserAPITest.class
+models\request\CreateUserRequest.class
+tests\CreateUserTest.class
+utils\ConfigReader.class
+utils\TestDataFactory.class
+base\BaseTest.class
+models\response\CreateUserResponse.class
+models\request\UpdateUserRequest.class
+models\response\UpdateUserResponse.class
+utils\LoggerUtils.class
+clients\BaseClient.class
+endpoints\Routes.class

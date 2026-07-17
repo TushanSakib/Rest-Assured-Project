@@ -1,0 +1,34 @@
+package tests;
+
+import base.BaseTest;
+import models.request.UpdateUserRequest;
+import models.response.UpdateUserResponse;
+import org.junit.Test;
+import org.testng.Assert;
+import services.UserService;
+
+public class UpdateUserTest extends BaseTest {
+
+    UserService userService = new UserService();
+
+    @Test
+    public void verifyUserUpdate(){
+        UpdateUserRequest request = new UpdateUserRequest();
+
+        request.setName("Sakib");
+
+        request.setJob("SQA Engineer");
+
+        UpdateUserResponse response =
+                userService.updateUser(
+                        2,request
+                );
+        Assert.assertEquals(
+                response.getName(),"Sakib"
+        );
+
+        Assert.assertEquals(response.getJob(),"SQA Engineer");
+
+        Assert.assertNotNull(response.getUpdatedAt());
+    }
+}
