@@ -2,12 +2,16 @@ package clients;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
-
-public class BaseClient {
+import utils.ConfigReader;
+npublic class BaseClient {
     protected RequestSpecification getRequestSpec(){
-        return new RequestSpecBuilder()
-                .setContentType("application/json")
-                .build();
+        RequestSpecBuilder builder = new RequestSpecBuilder()
+                .setContentType("application/json");
+        String apiKey = ConfigReader.getProperty("x.api.key");
+        if(apiKey != null && !apiKey.isEmpty()){
+            builder.addHeader("x-api-key", apiKey);
+        }
+        return builder.build();
     }
 }
 
