@@ -7,6 +7,9 @@ C:\Users\abdul.aziz\IdeaProjects\restAssured-Project\src\main\java\models\reques
 C:\Users\abdul.aziz\IdeaProjects\restAssured-Project\src\main\java\models\response\CreateUserResponse.java
 C:\Users\abdul.aziz\IdeaProjects\restAssured-Project\src\main\java\models\response\UpdateUserResponse.java
 C:\Users\abdul.aziz\IdeaProjects\restAssured-Project\src\main\java\services\UserService.java
+C:\Users\abdul.aziz\IdeaProjects\restAssured-Project\src\main\java\utils\AssertionUtils.java
 C:\Users\abdul.aziz\IdeaProjects\restAssured-Project\src\main\java\utils\ConfigReader.java
 C:\Users\abdul.aziz\IdeaProjects\restAssured-Project\src\main\java\utils\LoggerUtils.java
+C:\Users\abdul.aziz\IdeaProjects\restAssured-Project\src\main\java\utils\RequestSpecificationManager.java
+C:\Users\abdul.aziz\IdeaProjects\restAssured-Project\src\main\java\utils\ResponseSpecificationManager.java
 C:\Users\abdul.aziz\IdeaProjects\restAssured-Project\src\main\java\utils\TestDataFactory.java

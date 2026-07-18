@@ -3,6 +3,7 @@ package services;
 import clients.UserClient;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.restassured.response.Response;
+import jdk.javadoc.doclet.Reporter;
 import models.request.CreateUserRequest;
 import models.request.UpdateUserRequest;
 import models.response.CreateUserResponse;
@@ -46,5 +47,15 @@ public class UserService {
         } else {
             throw new RuntimeException("Update failed: " + response.getStatusCode() + " body: " + response.getBody().asString());
         }
+    }
+
+    public Response deleteUser(int id){
+        Response response = userClient.deleteUser(id);
+
+        LoggerUtils.info(
+                "Delete Status : "
+                +response.getStatusCode()
+        );
+        return response;
     }
 }

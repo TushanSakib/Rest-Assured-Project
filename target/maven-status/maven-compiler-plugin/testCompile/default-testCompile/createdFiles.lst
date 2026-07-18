@@ -1,3 +1,4 @@
-tests\UpdateUserTest.class
 tests\CreateUserTest.class
+tests\UpdateUserTest.class
+tests\DeleteUserTest.class
 tests\UserAPITest.class

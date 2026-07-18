@@ -51,4 +51,12 @@ public class UserClient extends BaseClient {
             throw new RuntimeException(e);
         }
     }
+
+    public Response deleteUser(int id){
+        return given()
+                .spec(getRequestSpec())
+                .pathParam("id",id)
+                .when()
+                .delete(Routes.DELETE_USER);
+    }
 }

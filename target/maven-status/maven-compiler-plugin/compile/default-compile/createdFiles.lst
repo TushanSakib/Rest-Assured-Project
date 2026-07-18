@@ -1,9 +1,12 @@
 clients\UserClient.class
 services\UserService.class
+utils\RequestSpecificationManager.class
 models\request\CreateUserRequest.class
 utils\ConfigReader.class
 utils\TestDataFactory.class
+utils\ResponseSpecificationManager.class
 base\BaseTest.class
+utils\AssertionUtils.class
 models\response\CreateUserResponse.class
 models\request\UpdateUserRequest.class
 models\response\UpdateUserResponse.class
