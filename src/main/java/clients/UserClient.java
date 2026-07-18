@@ -19,6 +19,7 @@ public class UserClient extends BaseClient {
     }
     public Response getSingleUser(int id){
         return given()
+                .spec(getRequestSpec())
                 .pathParam("id",id)
                 .when()
                 .get(Routes.GET_SINGLE_USER);
@@ -38,18 +39,14 @@ public class UserClient extends BaseClient {
             int id,
             UpdateUserRequest request
     ){
-        try{
-            String json = (new ObjectMapper()).writeValueAsString(request);
             return given()
                     .spec(getRequestSpec())
-                    .pathParam("id",id)
                     .contentType(ContentType.JSON)
-                    .body(json)
+                    .pathParam("id",id)
+                    .body(request)
                     .when()
                     .put(Routes.UPDATE_USER);
-        } catch (Exception e){
-            throw new RuntimeException(e);
-        }
+
     }
 
     public Response deleteUser(int id){

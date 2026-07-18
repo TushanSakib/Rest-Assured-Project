@@ -3,7 +3,6 @@ package services;
 import clients.UserClient;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.restassured.response.Response;
-import jdk.javadoc.doclet.Reporter;
 import models.request.CreateUserRequest;
 import models.request.UpdateUserRequest;
 import models.response.CreateUserResponse;

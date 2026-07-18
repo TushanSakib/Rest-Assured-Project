@@ -5,7 +5,7 @@ public class AssertionUtils {
 
     }
 
-    public static void veriyStatusCode(
+    public static void verifyStatusCode(
             int actual,
             int expected
     ){

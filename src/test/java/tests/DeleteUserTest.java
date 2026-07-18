@@ -15,7 +15,7 @@ public class DeleteUserTest extends BaseTest {
     public void verifyDeleteUser(){
         Response response = userService.deleteUser(2);
 
-        AssertionUtils.veriyStatusCode(
+        AssertionUtils.verifyStatusCode(
                 response.getStatusCode(),204
         );
     }
