@@ -1,9 +1,13 @@
 package base;
 
 import io.restassured.RestAssured;
+import listeners.TestListeners;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 import utils.ConfigReader;
 
+@Listeners(TestListeners.class)
 public class BaseTest {
 
     @BeforeClass

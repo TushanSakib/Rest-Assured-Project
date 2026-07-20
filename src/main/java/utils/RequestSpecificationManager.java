@@ -8,16 +8,27 @@ public class RequestSpecificationManager {
     private RequestSpecificationManager(){}
 
     public static RequestSpecification getRequestSpecification(){
-        RequestSpecBuilder builder = new RequestSpecBuilder();
 
-        builder.setContentType("application/json");
+        RequestSpecBuilder builder =
+                new RequestSpecBuilder();
 
-        String apiKey = ConfigReader.getProperty("x.api.key");
+        builder.addHeader(
+                "Accept",
+                "application/json"
+        );
 
-        if(apiKey != null && !apiKey.isBlank()){
-            builder.addHeader("x-api-key",apiKey);
+        String apiKey =
+                ConfigReader.getProperty("x.api.key");
 
+        if(apiKey != null &&
+                !apiKey.isBlank()) {
+
+            builder.addHeader(
+                    "x-api-key",
+                    apiKey
+            );
         }
+
         return builder.build();
     }
 }
